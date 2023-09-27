@@ -1,54 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraint_id"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/text_baslangic"
-        android:layout_width="194dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="109dp"
-        android:layout_marginEnd="109dp"
-        android:layout_marginBottom="475dp"
-        android:text="Amani AI"
-        android:textAlignment="center"
-        android:textColor="#4CADB8"
-        android:textColorHint="#00BCD4"
-        android:textColorLink="#00BCD4"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="179dp"
-        android:layout_marginEnd="174dp"
-        android:layout_marginBottom="396dp"
-        android:text="Welcome!"
-        android:textColor="#528F97"
-        android:textSize="24sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="244dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="103dp"
+        android:background="@color/purple_200"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextSurname"
+        android:layout_width="243dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="104dp"
+        android:ems="10"
+        android:hint="Surname"
+        android:inputType="text"
+        android:textColor="@color/teal_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+    <EditText
+        android:id="@+id/editTextTckn"
+        android:layout_width="239dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="103dp"
+        android:ems="10"
+        android:hint="TCKN"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSurname" />
 
     <Button
-        android:id="@+id/buttonStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="167dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="273dp"
-        android:text="START"
+        android:id="@+id/buttonGiris"
+        android:layout_width="115dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="169dp"
+        android:text="GİRİŞ"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
