@@ -6,13 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
-import androidx.core.content.ContextCompat
+import androidx.databinding.ObservableField
 import androidx.fragment.app.Fragment
 import com.yavuz.groovyapp.databinding.FragmentPreviewBinding
 
 class PreviewFragment : Fragment() {
 
     private lateinit var binding: FragmentPreviewBinding
+    private var userObservable = ObservableField<User>()
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreateView(
@@ -21,16 +22,26 @@ class PreviewFragment : Fragment() {
     ): View {
 
         binding = FragmentPreviewBinding.inflate(inflater, container, false)
-        val user = arguments?.getParcelable("name", User::class.java)
-        binding.user = user
+
+        val userData = arguments?.getParcelable("name", User::class.java)
+
+        userObservable = ObservableField(userData)
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.user = UserObservable(ObservableField(userObservable))
         return binding.root
     }
 
-    fun changeBackgroundColor(backgroundColorResId: Int) {
-        view?.setBackgroundColor(ContextCompat.getColor(requireContext(), backgroundColorResId))
-
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        view.setOnClickListener {
+            changeData()
+        }
     }
 
+    private fun changeData() {
+        userObservable.get()?.name = "dfgdghdgh"
+        userObservable.get()?.surname = "dfgdghdgh"
+        userObservable.get()?.tckn = "49769854"
+    }
 
 }
