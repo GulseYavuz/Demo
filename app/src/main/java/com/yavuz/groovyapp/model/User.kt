@@ -1,4 +1,4 @@
-package com.yavuz.groovyapp
+package com.yavuz.groovyapp.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

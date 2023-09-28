@@ -1,8 +1,9 @@
-package com.yavuz.groovyapp
+package com.yavuz.groovyapp.ui.binding
 
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import com.yavuz.groovyapp.R
 
 @BindingAdapter("customText1")
 fun TextView.customText(text: String) {

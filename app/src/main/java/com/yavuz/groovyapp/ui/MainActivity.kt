@@ -1,9 +1,11 @@
-package com.yavuz.groovyapp
+package com.yavuz.groovyapp.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.yavuz.groovyapp.R
 import com.yavuz.groovyapp.databinding.ActivityMainBinding
+import com.yavuz.groovyapp.util.replaceFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -17,12 +19,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(view) //view binding activityde nasıl kullanılır
 
         replaceFragment(MainFragment())
-
-    //Wıth fragment manager kullanarak fragment nasıl yönetilir
-
-
     }
-
-
-
 }

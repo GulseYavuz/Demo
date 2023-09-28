@@ -1,10 +1,11 @@
-package com.yavuz.groovyapp
+package com.yavuz.groovyapp.util
 
 import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
 import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.yavuz.groovyapp.R
 
 fun AppCompatActivity.replaceFragment(fragment: Fragment){
     this.supportFragmentManager.beginTransaction()

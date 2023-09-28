@@ -8,7 +8,7 @@
 
         <variable
             name="user"
-            type="com.yavuz.groovyapp.UserObservable" />
+            type="com.yavuz.groovyapp.model.UserObservable" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +27,7 @@
                 android:layout_marginTop="117dp"
                 android:layout_marginEnd="143dp"
                 android:textSize="24sp"
-                customText1="@{user.observable}"
+                customText1="@{user.data}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

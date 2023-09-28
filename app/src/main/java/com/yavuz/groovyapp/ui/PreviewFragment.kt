@@ -1,4 +1,4 @@
-package com.yavuz.groovyapp
+package com.yavuz.groovyapp.ui
 
 import android.os.Build
 import android.os.Bundle
@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.yavuz.groovyapp.databinding.FragmentPreviewBinding
+import com.yavuz.groovyapp.model.User
+import com.yavuz.groovyapp.model.UserObservable
+import com.yavuz.groovyapp.util.parcelable
 
 class PreviewFragment : Fragment() {
 
@@ -23,7 +26,7 @@ class PreviewFragment : Fragment() {
         binding = FragmentPreviewBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
         val userData = arguments?.parcelable<User>("name")
-        userObservable.observable.set(userData?.name)
+        userObservable.data.set(userData?.name)
         binding.user = userObservable
         return binding.root
     }
@@ -45,5 +48,4 @@ class PreviewFragment : Fragment() {
          */
         binding.textViewDegisen.text = "jjjj"
     }
-
 }

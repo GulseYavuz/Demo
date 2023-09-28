@@ -1,4 +1,4 @@
-package com.yavuz.groovyapp
+package com.yavuz.groovyapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,13 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.yavuz.groovyapp.databinding.FragmentMainBinding
+import com.yavuz.groovyapp.model.User
+import com.yavuz.groovyapp.util.replaceFragment
 
 
 class MainFragment : Fragment() {
 
     private lateinit var binding: FragmentMainBinding
     private lateinit var user: User
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,9 +28,9 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         user = User(
-            name = "DIHGGGHEGFIHDFLGDFHGNDLFGDFG",
-            surname = "kjfhgk",
-            tckn = "4897489"
+            name = binding.editTextName.text.toString(),
+            surname = binding.editTextSurname.text.toString(),
+            tckn = binding.editTextTckn.text.toString()
         )
 
         binding.buttonGiris.setOnClickListener {
@@ -42,6 +43,4 @@ class MainFragment : Fragment() {
         }
 
     }
-
-
 }
