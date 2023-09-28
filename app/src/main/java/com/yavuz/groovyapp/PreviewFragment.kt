@@ -6,14 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
-import androidx.databinding.ObservableField
 import androidx.fragment.app.Fragment
 import com.yavuz.groovyapp.databinding.FragmentPreviewBinding
 
 class PreviewFragment : Fragment() {
 
     private lateinit var binding: FragmentPreviewBinding
-    private var userObservable = ObservableField<User>()
+    private val userObservable = UserObservable()
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreateView(
@@ -22,12 +21,10 @@ class PreviewFragment : Fragment() {
     ): View {
 
         binding = FragmentPreviewBinding.inflate(inflater, container, false)
-
-        val userData = arguments?.getParcelable("name", User::class.java)
-
-        userObservable = ObservableField(userData)
         binding.lifecycleOwner = viewLifecycleOwner
-        binding.user = UserObservable(ObservableField(userObservable))
+        val userData = arguments?.parcelable<User>("name")
+        userObservable.observable.set(userData?.name)
+        binding.user = userObservable
         return binding.root
     }
 
@@ -39,9 +36,14 @@ class PreviewFragment : Fragment() {
     }
 
     private fun changeData() {
-        userObservable.get()?.name = "dfgdghdgh"
-        userObservable.get()?.surname = "dfgdghdgh"
-        userObservable.get()?.tckn = "49769854"
+        /**
+         * First Way of changing the text
+         */
+        // userObservable.observable.set("ngjgjjghkjghkjykuhgjkgkjgjk")
+        /**
+         * Second way of changing the text (classical)
+         */
+        binding.textViewDegisen.text = "jjjj"
     }
 
 }

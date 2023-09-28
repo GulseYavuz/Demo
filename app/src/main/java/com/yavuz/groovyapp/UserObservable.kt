@@ -2,6 +2,8 @@ package com.yavuz.groovyapp
 
 import androidx.databinding.ObservableField
 
-data class UserObservable(
-    val observable: ObservableField<User>
-)
+class UserObservable {
+    var observable = ObservableField<String>()
+
+}
+

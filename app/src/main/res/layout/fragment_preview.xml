@@ -27,7 +27,7 @@
                 android:layout_marginTop="117dp"
                 android:layout_marginEnd="143dp"
                 android:textSize="24sp"
-                app:customText1="@{user.observable.surname}"
+                customText1="@{user.observable}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
