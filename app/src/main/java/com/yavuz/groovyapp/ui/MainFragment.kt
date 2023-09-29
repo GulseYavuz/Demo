@@ -27,13 +27,13 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        user = User(
-            name = binding.editTextName.text.toString(),
-            surname = binding.editTextSurname.text.toString(),
-            tckn = binding.editTextTckn.text.toString()
-        )
-
         binding.buttonGiris.setOnClickListener {
+            user = User(
+                name = binding.editTextName.text.toString(),
+                surname = binding.editTextSurname.text.toString(),
+                tckn = binding.editTextTckn.text.toString()
+            )
+
             val previewFragment = PreviewFragment()
             val bundle = Bundle()
             bundle.putParcelable("name", user)

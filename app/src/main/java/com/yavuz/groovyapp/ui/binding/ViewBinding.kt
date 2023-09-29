@@ -6,7 +6,8 @@ import androidx.databinding.BindingAdapter
 import com.yavuz.groovyapp.R
 
 @BindingAdapter("customText1")
-fun TextView.customText(text: String) {
+fun TextView.customText(text: String?) {
+    if (text == null) return
     this.text = text
     this.setTextColor(ContextCompat.getColor(context, R.color.purple_200))
 }

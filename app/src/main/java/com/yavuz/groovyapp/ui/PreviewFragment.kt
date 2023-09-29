@@ -7,15 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.yavuz.groovyapp.databinding.FragmentPreviewBinding
+import com.yavuz.groovyapp.model.PreviewFragmentViewModel
 import com.yavuz.groovyapp.model.User
-import com.yavuz.groovyapp.model.UserObservable
 import com.yavuz.groovyapp.util.parcelable
 
 class PreviewFragment : Fragment() {
 
     private lateinit var binding: FragmentPreviewBinding
-    private val userObservable = UserObservable()
+    private val sharedViewModel: PreviewFragmentViewModel by viewModels()
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreateView(
@@ -25,9 +26,11 @@ class PreviewFragment : Fragment() {
 
         binding = FragmentPreviewBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
+
         val userData = arguments?.parcelable<User>("name")
-        userObservable.data.set(userData?.name)
-        binding.user = userObservable
+        sharedViewModel.sharedData.set(userData?.name)
+        binding.viewModel = sharedViewModel
+
         return binding.root
     }
 
@@ -38,6 +41,7 @@ class PreviewFragment : Fragment() {
         }
     }
 
+
     private fun changeData() {
         /**
          * First Way of changing the text
@@ -46,6 +50,8 @@ class PreviewFragment : Fragment() {
         /**
          * Second way of changing the text (classical)
          */
-        binding.textViewDegisen.text = "jjjj"
+        // sharedViewModel.sharedData.set("heyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy")
+        sharedViewModel.startWatch()
+
     }
 }

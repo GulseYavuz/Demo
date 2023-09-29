@@ -61,6 +61,8 @@ dependencies {
 
     def appcompat_version = "1.6.1"
 
+    implementation 'androidx.fragment:fragment-ktx:1.1.0'
+
     implementation "androidx.appcompat:appcompat:$appcompat_version"
 // For loading and tinting drawables on older versions of the platform
     implementation "androidx.appcompat:appcompat-resources:$appcompat_version"

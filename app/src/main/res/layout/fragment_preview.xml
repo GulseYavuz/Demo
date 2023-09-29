@@ -7,8 +7,8 @@
         <import type="android.view.View" />
 
         <variable
-            name="user"
-            type="com.yavuz.groovyapp.model.UserObservable" />
+            name="viewModel"
+            type="com.yavuz.groovyapp.model.PreviewFragmentViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +27,7 @@
                 android:layout_marginTop="117dp"
                 android:layout_marginEnd="143dp"
                 android:textSize="24sp"
-                customText1="@{user.data}"
+                customText1="@{viewModel.sharedData}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
